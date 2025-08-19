@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Tokyo Quest — 把空檔變成小冒險</title>
+  <meta name="description" content="在東京車站附近還有 30 分鐘？選一個任務，走訪 3 個隱藏景點。免預約、免下載。β 版免費。" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles-b.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tokyo Quest — 把空檔變成小冒險" />
+  <meta property="og:description" content="選車站，照提示前進。約 30 分鐘找到 3 個隱藏景點。β 版免費。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tokyo-quest.com/zh" />
+  <meta property="og:image" content="https://tokyo-quest.com/zh/og-image.jpg" />
+
+  <!-- Favicons (reuse existing PNG) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./favicon.png" />
+  <link rel="apple-touch-icon" href="./favicon.png" />
+  <meta name="theme-color" content="#0a0d14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主內容</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="site-header" role="banner">
+    <a class="brand" href="https://tokyo-quest.com/zh" aria-label="Tokyo Quest 首頁">
+      <span class="brand-mark">TokyoQuest<span class="beta">[β]</span></span>
+    </a>
+    <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false">選單</button>
+    <nav id="primary-nav" class="top-nav" aria-label="主導覽">
+      <a class="nav-link" href="#benefits">好處</a>
+      <a class="nav-link" href="#stations">車站</a>
+      <a class="nav-link" href="#how">玩法</a>
+      <a class="nav-link cta" href="https://tokyo-quest.com/zh" data-cta="top">開始體驗</a>
+    </nav>
+  </header>
+  <div class="nav-backdrop" hidden></div>
+
+  <!-- HERO -->
+  <main id="main">
+  <section class="hero" aria-label="主視覺">
+    <picture>
+      <img class="hero-bg" src="./assets/hero.jpg" alt="" aria-hidden="true" width="1920" height="1080" sizes="100vw" fetchpriority="high" decoding="async" />
+    </picture>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner container">
+      <h1>把零碎時間變成一場小冒險。</h1>
+      <p class="sub">從車站步行找出 3 個隱藏景點。避開觀光雷點。β 版免費。</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="https://tokyo-quest.com/zh" data-cta="hero">立即開始</a>
+        <a class="btn ghost" href="#stations">選擇附近車站</a>
+        <p class="trust">免預約 · 免下載 · GPS 導航</p>
+      </div>
+
+      <!-- Quick station pills (primary test lever) -->
+      <div class="station-pills" id="stations-quick">
+        <a class="pill" data-cta="pill" href="https://tokyo-quest.com/zh/select?location=Shibuya" aria-label="選擇澀谷任務">澀谷</a>
+        <a class="pill" data-cta="pill" href="https://tokyo-quest.com/zh/select?location=Shinjuku" aria-label="選擇新宿任務">新宿</a>
+        <a class="pill" data-cta="pill" href="https://tokyo-quest.com/zh/select?location=Harajuku" aria-label="選擇原宿任務">原宿</a>
+      </div>
+
+      <!-- Time intent switch -->
+      <div class="time-band" role="group" aria-label="可用時間">
+        <span class="time-label">可用時間：</span>
+        <button class="time-btn" data-min="15">15 分</button>
+        <button class="time-btn is-active" data-min="30">30 分</button>
+        <button class="time-btn" data-min="45">45 分</button>
+        <span class="time-hint" id="time-hint">30 分鐘推薦：附近 3 個景點</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS (copy-first) -->
+  <section id="benefits" class="section benefits">
+    <div class="container">
+      <h2 class="section-title">把零碎時間變成在東京的實際收穫</h2>
+      <div class="benefit-grid">
+        <article class="b-card">
+          <h3>免排隊</h3>
+          <p>走人少的巷弄。輕鬆完成不久候。</p>
+        </article>
+        <article class="b-card">
+          <h3>免準備</h3>
+          <p>選車站就開走。不用預約也不用門票。</p>
+        </article>
+        <article class="b-card">
+          <h3>不爆雷提示</h3>
+          <p>用距離與方位線索保持探索的樂趣。</p>
+        </article>
+        <article class="b-card">
+          <h3>β 版免費</h3>
+          <p>現在就試，幫我們把路線做得更好。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section how">
+    <div class="container">
+      <h2 class="section-title">怎麼玩</h2>
+      <ol class="steps">
+        <li class="step">
+          <h3>1. 選擇車站</h3>
+          <p>澀谷、新宿、或原宿。</p>
+        </li>
+        <li class="step">
+          <h3>2. 依提示前進</h3>
+          <p>距離、方位，以及照片線索。</p>
+        </li>
+        <li class="step">
+          <h3>3. 找到 3 個隱藏景點</h3>
+          <p>是連在地人也喜歡的小發現。</p>
+        </li>
+        <li class="step">
+          <h3>4. 約 30 分鐘完成</h3>
+          <p>設計成可以銜接你的行程。</p>
+        </li>
+      </ol>
+
+      <!-- In-app screenshot carousel -->
+      <div class="shots" role="region" aria-label="App 螢幕截圖">
+        <figure class="shot">
+          <img class="lazy" data-src="./assets/screen-01.webp" alt="不爆雷的距離與方位提示" width="710" height="1075" sizes="(max-width: 720px) 80vw, 420px" />
+          <figcaption>不爆雷的距離與方位提示</figcaption>
+        </figure>
+        <figure class="shot">
+          <img class="lazy" data-src="./assets/screen-02.webp" alt="可遊玩區域地圖" width="710" height="1075" sizes="(max-width: 720px) 80vw, 420px" />
+          <figcaption>在地圖上查看可遊玩區域</figcaption>
+        </figure>
+        <figure class="shot">
+          <img class="lazy" data-src="./assets/screen-03.webp" alt="每個景點的由來與小故事" width="710" height="1075" sizes="(max-width: 720px) 80vw, 420px" />
+          <figcaption>每個景點的由來與小故事</figcaption>
+        </figure>
+      </div>
+      <p class="scroll-hint" aria-hidden="true">左右滑動以查看</p>
+    </div>
+  </section>
+
+  <!-- STATIONS -->
+  <section id="stations" class="section stations">
+    <div class="container">
+      <h2 class="section-title">從這些車站開始</h2>
+      <div class="station-grid">
+        <a class="station-card" href="https://tokyo-quest.com/zh/select?location=Shibuya" aria-label="選擇澀谷任務">
+          <img src="./assets/playareas-shibuya.webp" alt="澀谷區域" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
+          <div class="meta">
+            <h3>澀谷</h3>
+            <p>巷弄後街</p>
+          </div>
+        </a>
+        <a class="station-card" href="https://tokyo-quest.com/zh/select?location=Shinjuku" aria-label="選擇新宿任務">
+          <img src="./assets/playareas-shinjuku.webp" alt="新宿區域" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
+          <div class="meta">
+            <h3>新宿</h3>
+            <p>隱藏神社</p>
+          </div>
+        </a>
+        <a class="station-card" href="https://tokyo-quest.com/zh/select?location=Harajuku" aria-label="選擇原宿任務">
+          <img src="./assets/playareas-harajuku.webp" alt="原宿區域" loading="lazy" sizes="(max-width: 720px) 100vw, 33vw" />
+          <div class="meta">
+            <h3>原宿</h3>
+            <p>次文化</p>
+          </div>
+        </a>
+      </div>
+      <div class="center">
+        <a class="btn primary" href="https://tokyo-quest.com/zh" data-cta="mid">免費開始</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES band -->
+  <section class="section band">
+    <div class="container band-inner">
+      <h2 class="band-title">解決旅途中常見情境</h2>
+      <ul class="jobs">
+        <li>只剩 30 分鐘</li>
+        <li>不想人擠人</li>
+        <li>知名景點都看過了</li>
+        <li>想要在地氛圍</li>
+      </ul>
+      <a class="btn ghost" href="https://tokyo-quest.com/zh" data-cta="band">現在試試看</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq">
+    <div class="container">
+      <h2 class="section-title">常見問題</h2>
+      <details>
+        <summary>需要下載 App 嗎？</summary>
+        <p>不用。直接在瀏覽器執行。</p>
+      </details>
+      <details>
+        <summary>有英文版嗎？</summary>
+        <p>有。英語優先提供。</p>
+      </details>
+      <details>
+        <summary>離線可用嗎？</summary>
+        <p>需要 GPS 與基本網路連線。</p>
+      </details>
+      <details>
+        <summary>需要多久？</summary>
+        <p>每個任務約 30 分鐘。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta" role="region" aria-label="固定行動呼籲">
+    <a class="btn primary" href="https://tokyo-quest.com/zh" data-cta="sticky">免費開始</a>
+    <a class="btn ghost small" href="#stations">最近的車站</a>
+  </div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <small>© Tokyo Quest</small>
+      <nav aria-label="法務連結">
+        <a class="footer-link" href="https://tokyo-quest.com/zh/terms" target="_blank" rel="noreferrer">使用條款</a>
+        <a class="footer-link" href="mailto:kanetomo.seihyo@gmail.com">聯絡</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="./main-b.js" defer></script>
+</body>
+</html>
